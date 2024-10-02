@@ -5,7 +5,7 @@ body {
     padding: 20px;
 }
 
-h1 {
+h1, h2 {
     text-align: center;
 }
 
@@ -13,7 +13,7 @@ form {
     margin-bottom: 20px;
 }
 
-input, textarea {
+input {
     display: block;
     width: 100%;
     margin: 10px 0;
@@ -34,12 +34,8 @@ button:hover {
     background-color: #218838;
 }
 
-#postList {
-    margin-top: 20px;
-}
-
-#postList div {
-    border: 1px solid #ccc;
-    padding: 10px;
-    margin: 10px 0;
+p {
+    text-align: center;
+    font-size: 14px;
+    color: #333;
 }

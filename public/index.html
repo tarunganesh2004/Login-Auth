@@ -4,12 +4,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Full Stack App</title>
+    <title>User Auth</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
-    <h1>Full Stack App</h1>
+    <h1>User Authentication</h1>
 
     <!-- Registration Form -->
     <section>
@@ -32,20 +32,6 @@
             <button type="submit">Login</button>
         </form>
         <p id="loginMsg"></p>
-    </section>
-
-    <!-- Post Section (shown after login) -->
-    <section id="postSection" style="display:none;">
-        <h2>Create Post</h2>
-        <form id="postForm">
-            <input type="text" id="postTitle" placeholder="Post Title" required>
-            <textarea id="postContent" placeholder="Post Content" required></textarea>
-            <button type="submit">Create Post</button>
-        </form>
-        <p id="postMsg"></p>
-
-        <h2>All Posts</h2>
-        <div id="postList"></div>
     </section>
 
     <script src="app.js"></script>
