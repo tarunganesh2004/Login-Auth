@@ -1,25 +1,21 @@
 // @ts-nocheck
-// index.js
-
 const express = require('express');
 const path = require('path');
-const userRoutes = require('./app/users');
+const bodyParser = require('body-parser');
 const authRoutes = require('./app/auth');
-const postRoutes = require('./app/posts');
-
 const app = express();
 
-// Middleware to parse JSON bodies
-app.use(express.json());
+// Middleware
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
 
 // Serve static frontend files
 app.use(express.static(path.join(__dirname, 'public')));
 
-// Backend API routes
-app.use('/api/users', userRoutes);
+// API routes
 app.use('/api/auth', authRoutes);
-app.use('/api/posts', postRoutes);
 
+// Start the server
 app.listen(3000, () => {
     console.log('Server running on http://localhost:3000');
 });
