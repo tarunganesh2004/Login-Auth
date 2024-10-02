@@ -30,5 +30,21 @@ document.getElementById('loginForm').addEventListener('submit', async (e) => {
     });
 
     const data = await response.json();
-    document.getElementById('loginMsg').textContent = data.message;
+
+    // Check if login was successful
+    if (response.ok) {
+        // Open a new window or tab with the success message
+        const newWindow = window.open('', '_blank');
+        newWindow.document.write(`
+            <html>
+                <head><title>Welcome</title></head>
+                <body>
+                    <h1>Login Successful</h1>
+                    <p>${data.message}</p>
+                </body>
+            </html>
+        `);
+    } else {
+        document.getElementById('loginMsg').textContent = data.message || 'Login failed';
+    }
 });

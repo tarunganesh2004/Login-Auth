@@ -33,6 +33,11 @@ router.post('/register', async (req, res) => {
 router.post('/login', (req, res) => {
     const { email, password } = req.body;
 
+    // Check if email and password are provided
+    if (!email || !password) {
+        return res.status(400).json({ message: 'Email and password are required' });
+    }
+
     const loginQuery = 'SELECT * FROM users WHERE email = ?';
     db.query(loginQuery, [email], async (err, result) => {
         if (err || result.length === 0) {
@@ -50,5 +55,6 @@ router.post('/login', (req, res) => {
         res.json({ message: `Welcome ${user.name}` });
     });
 });
+
 
 module.exports = router;
