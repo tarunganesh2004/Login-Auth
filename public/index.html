@@ -15,24 +15,25 @@
     <section>
         <h2>Register</h2>
         <form id="registerForm">
-            <input type="text" id="regName" placeholder="Name" required>
-            <input type="email" id="regEmail" placeholder="Email" required>
-            <input type="password" id="regPassword" placeholder="Password" required>
+            <input type="text" id="regName" placeholder="Name" required autocomplete="name">
+            <input type="email" id="regEmail" placeholder="Email" required autocomplete="email">
+            <input type="password" id="regPassword" placeholder="Password" required autocomplete="new-password">
             <button type="submit">Register</button>
         </form>
         <p id="registerMsg"></p>
     </section>
-
+    
     <!-- Login Form -->
     <section>
         <h2>Login</h2>
         <form id="loginForm">
-            <input type="email" id="loginEmail" placeholder="Email" required>
-            <input type="password" id="loginPassword" placeholder="Password" required>
+            <input type="email" id="loginEmail" placeholder="Email" required autocomplete="email">
+            <input type="password" id="loginPassword" placeholder="Password" required autocomplete="current-password">
             <button type="submit">Login</button>
         </form>
         <p id="loginMsg"></p>
     </section>
+
 
     <script src="app.js"></script>
 </body>
