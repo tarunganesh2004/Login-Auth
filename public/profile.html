@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Profile</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <h1>User Profile</h1>
+    <div>
+        <p><strong>Name:</strong> <span id="profileName"></span></p>
+        <p><strong>Email:</strong> <span id="profileEmail"></span></p>
+    </div>
+
+    <h2>Update Profile</h2>
+    <form id="updateProfileForm">
+        <input type="text" id="updateName" placeholder="Name" required>
+        <input type="email" id="updateEmail" placeholder="Email" required>
+        <button type="submit">Update Profile</button>
+    </form>
+    <p id="updateMessage"></p>
+
+    <script src="profile.js"></script>
+</body>
+
+</html>

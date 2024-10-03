@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Posts</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <h1>Create a Post</h1>
+    <form id="createPostForm">
+        <input type="text" id="postTitle" placeholder="Post Title" required>
+        <textarea id="postContent" placeholder="Post Content" required></textarea>
+        <button type="submit">Create Post</button>
+    </form>
+    <p id="postMessage"></p>
+
+    <h2>All Posts</h2>
+    <div id="postList"></div>
+
+    <script src="posts.js"></script>
+</body>
+
+</html>
