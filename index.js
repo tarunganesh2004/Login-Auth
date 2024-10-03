@@ -1,4 +1,3 @@
-// @ts-nocheck
 const express = require('express');
 const path = require('path');
 const bodyParser = require('body-parser');
@@ -10,14 +9,12 @@ const app = express();
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
-// Serve static frontend files
+// Serve static files (frontend)
 app.use(express.static(path.join(__dirname, 'public')));
 
 // API routes
 app.use('/api/auth', authRoutes);
-
-// posts routes
-app.use('api/posts', postRoutes);
+app.use('/api/posts', postRoutes);
 
 // Start the server
 app.listen(3000, () => {

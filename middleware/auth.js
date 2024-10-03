@@ -1,16 +1,20 @@
-// middleware/auth.js
 const jwt = require('jsonwebtoken');
+const SECRET_KEY = 'YOUR_SECRET_KEY';  // Use a secure secret key
 
+// Middleware to verify JWT token
 const authMiddleware = (req, res, next) => {
-    const token = req.header('Authorization')?.split(' ')[1];
-    if (!token) return res.status(401).json({ message: 'No token, authorization denied' });
+    const token = req.header('Authorization')?.split(' ')[1];  // Extract token from 'Authorization: Bearer <token>'
+
+    if (!token) {
+        return res.status(401).json({ message: 'Access denied. No token provided.' });
+    }
 
     try {
-        const decoded = jwt.verify(token, 'SECRET_KEY');
-        req.user = decoded;
-        next();
+        const decoded = jwt.verify(token, SECRET_KEY);  // Verify the token
+        req.user = decoded;  // Attach decoded user to request object
+        next();  // Pass control to next middleware or route
     } catch (err) {
-        res.status(401).json({ message: 'Token is not valid' });
+        return res.status(401).json({ message: 'Invalid token' });
     }
 };
 
