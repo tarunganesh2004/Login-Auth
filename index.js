@@ -3,6 +3,7 @@ const express = require('express');
 const path = require('path');
 const bodyParser = require('body-parser');
 const authRoutes = require('./app/auth');
+const postRoutes = require('./app/posts');
 const app = express();
 
 // Middleware
@@ -14,6 +15,9 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 // API routes
 app.use('/api/auth', authRoutes);
+
+// posts routes
+app.use('api/posts', postRoutes);
 
 // Start the server
 app.listen(3000, () => {
