@@ -4,23 +4,97 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Posts</title>
+    <title>User Dashboard</title>
     <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Inline styles for demonstration; ideally move this to styles.css */
+        #welcomeMessage {
+            font-size: 24px;
+            color: #4CAF50;
+            margin-bottom: 20px;
+            font-weight: bold;
+            text-align: center;
+        }
+
+        #dashboardOptions {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        #dashboardOptions button {
+            padding: 10px 20px;
+            margin: 5px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        #dashboardOptions button:hover {
+            background-color: #45a049;
+        }
+
+        /* Table styling */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+
+        table,
+        th,
+        td {
+            border: 1px solid black;
+        }
+
+        th,
+        td {
+            padding: 12px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+    </style>
 </head>
 
 <body>
-    <h1 id="welcomeMessage">Welcome!</h1>
+    <h1 id="welcomeMessage"></h1>
 
-    <h2>Create a New Post</h2>
-    <form id="createPostForm">
-        <input type="text" id="postTitle" placeholder="Post Title" required>
-        <textarea id="postContent" placeholder="Post Content" required></textarea>
-        <button type="submit">Create Post</button>
-    </form>
-    <p id="postMessage"></p>
+    <!-- Dashboard Options -->
+    <div id="dashboardOptions">
+        <button id="viewPostsBtn">View Posts</button>
+        <button id="createPostBtn">Create Post</button>
+    </div>
 
-    <h2>All Posts</h2>
-    <div id="postList"></div>
+    <!-- Post Creation Form -->
+    <div id="createPostSection" style="display:none;">
+        <h2>Create a New Post</h2>
+        <form id="createPostForm">
+            <input type="text" id="postTitle" placeholder="Post Title" required>
+            <textarea id="postContent" placeholder="Post Content" required></textarea>
+            <button type="submit">Create Post</button>
+        </form>
+        <p id="postMessage"></p>
+    </div>
+
+    <!-- Table for Posts -->
+    <div id="postsTableSection" style="display:none;">
+        <h2>All Posts</h2>
+        <table id="postsTable">
+            <thead>
+                <tr>
+                    <th>Title</th>
+                    <th>Content</th>
+                    <th>Author</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody id="postsTableBody"></tbody>
+        </table>
+    </div>
 
     <script src="posts.js"></script>
 </body>
